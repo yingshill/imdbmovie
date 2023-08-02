@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Results from '@/components/Results'
 
 const API_KEY  = process.env.API_KEY
 export default async function Home({ searchParams }) {
@@ -16,8 +17,13 @@ export default async function Home({ searchParams }) {
 
   const data = await res.json();
   const results = data.results;
+
+  //ERROR HANDLING
+  if(!res.ok){
+    throw new Error("Failed to fetch data");
+  }
   
-  return (
-    <h1 className='text-red-400'>Home</h1>
-  )
+  return <div>
+    <Results results={results}/>
+  </div>
 }
