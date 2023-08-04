@@ -27,7 +27,7 @@ export default function Card({ result }) {
             <p className="line-clamp-2 text-md">{result.overview}</p>
             <p className="flex items-center">
                 {result.release_date || result.first_air_date}
-                <FiThumbsUp className="h-5 mr-1 ml-3"/>
+                <FiThumbsUp className="h-5 mr-1 ml-5"/>
                 {result.vote_count}
             </p>
 
